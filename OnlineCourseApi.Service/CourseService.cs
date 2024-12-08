@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OnlineCourseApi.Core.Models;
+using OnlineCourseApi.Data;
 
 namespace OnlineCourseApi.Service
 {
     public class CourseService : ICourseService
     {
-        private readonly ICourseService _courseService;
-        public CourseService(ICourseService courseService)
+        private readonly ICourseRepository _courseRepo;
+        public CourseService(Data.ICourseRepository courseRepo)
         {
-            _courseService = courseService;
+            _courseRepo = courseRepo;
         }
         public Task<List<CourseModel>> GetAllCoursesAsync(int? categoryId = null)
         {
-            throw new NotImplementedException();
+            return _courseRepo.GetAllCoursesAsync(categoryId);
         }
 
         public Task<CourseDetailsModel> GetCourseDetailsAsync(int courseId)
         {
-            throw new NotImplementedException();
+            return _courseRepo.GetCourseDetailsAsync(courseId);
         }
     }
 }
