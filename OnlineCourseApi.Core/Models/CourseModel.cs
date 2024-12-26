@@ -34,7 +34,6 @@ namespace OnlineCourseApi.Core.Models
         public decimal AverageRating { get; set; }
         public int TotalRating { get; set; }
     }
-
     public class UserReviewModel
     {
         public int CourseId { get; set; }

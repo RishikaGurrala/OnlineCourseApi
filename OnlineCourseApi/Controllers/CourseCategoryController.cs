@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using OnlineCourseApi.Service;
@@ -7,6 +8,7 @@ namespace OnlineCourseApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[AllowAnonymous]
     public class CourseCategoryController : ControllerBase
     {
         private readonly ICourseCategoryService _courseCategoryService;

@@ -90,6 +90,16 @@ namespace OnlineCourseApi.Data
                         Comments = r.Comments,
                         ReviewDate = r.ReviewDate
                     }).OrderByDescending(o => o.Rating).Take(10).ToList(),
+                    SessionDetails = c.SessionDetails.Select(sd => new SessionDetailsModel
+                    {
+                        SessionId = sd.SessionId,
+                        CourseId = sd.CourseId,
+                        Title = sd.Title,
+                        Description = sd.Description,
+                        VideoUrl = sd.VideoUrl,
+                        VideoOrder = sd.VideoOrder
+                    }).OrderBy(o => o.VideoOrder).ToList()
+                    ,
                     UserRating = new UserRatingModel
                     {
                         CourseId = c.CourseId,
